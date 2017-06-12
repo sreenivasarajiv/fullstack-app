@@ -1,5 +1,6 @@
 import express from 'express';
 import config from './config';
+import fs from 'fs';
 
 var server = express();
 
@@ -8,8 +9,11 @@ server.listen(config.port, () => {
 });
 
 server.get('/about', (req, res) => {
-    res.send("This is About Page");
+    fs.readFile('./about.html', (err, data) => {
+        res.send(data.toString());
+    })
 });
+
 
 server.get('/', (req, res) => {
     res.send("Hello from Express !!!");
