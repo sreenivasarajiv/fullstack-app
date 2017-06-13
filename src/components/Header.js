@@ -3,10 +3,10 @@ import PropTypes from 'prop-types';
 
 var color = Math.random() > 0.5 ? color = 'green' : color = 'red';
 
-const Header = ({ message, name }) => {
+const Header = ({ message }) => {
     return (
         <h2 className="text-center" style={{ color: color }} >
-            {message} {name}
+            {message}
         </h2>
     );
 }

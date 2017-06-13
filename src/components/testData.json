@@ -1,0 +1,24 @@
+{
+    "contests": [
+        {
+            "id": 1,
+            "categoryName": "Newspaper/Magazine",
+            "contestsName": "Educating the People"
+        },
+        {
+            "id": 2,
+            "categoryName": "Business/Company",
+            "contestsName": "Doing business among the People"
+        },
+        {
+            "id": 3,
+            "categoryName": "Software Company",
+            "contestsName": "Building the Website"
+        },
+        {
+            "id": 4,
+            "categoryName": "Website",
+            "contestsName": "Showing the Information in WWW"
+        }
+    ]
+}
