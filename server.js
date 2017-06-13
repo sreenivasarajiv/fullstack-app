@@ -10,7 +10,7 @@ server.listen(config.port, () => {
     console.log(`listening to http://localhost:${config.port}`);
 });
 
-// server.use(express.static('public'));
+server.use(express.static('public'));
 server.use('/api', apiRouter);
 
 server.get('/', (req, res) => {
