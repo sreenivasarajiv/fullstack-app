@@ -19,7 +19,7 @@ server.use('/api', apiRouter);
 server.use(sassMiddleware({
     src: path.join(__dirname, 'sass'),
     dest: path.join(__dirname, 'public')
-}))
+}));
 
 server.get('/', (req, res) => {
     // res.send("Hello from Express !!!");

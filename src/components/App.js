@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './Header';
 import ContestsPreview from './ContestsPreview';
-import data from './testData';
+import axios from 'axios';
 
 class App extends React.Component {
 
@@ -34,7 +34,11 @@ class App extends React.Component {
         // ajax, external libraries (component is dependent on), dom manipulations
         // should come here
 
-        this.setState({ contests: data.contests });
+        axios.get('/api/contests')
+            .then(resp =>
+                this.setState({ contests: resp.data.contests })
+            )
+            .catch(console.error)
 
     }
 

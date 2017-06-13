@@ -1,0 +1,7 @@
+Angular is Frame work. we can get almost all the features without using external library 
+like fetching data from api, server side render etc..,
+
+React is just a library. It has to be studied along with other libararies along with complex configurations
+so it is taking some time.
+
+But I've nearly finished the basics. I will give a working template once it is done.
