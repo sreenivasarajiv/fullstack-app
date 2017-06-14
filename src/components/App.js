@@ -1,7 +1,6 @@
 import React from 'react';
 import Header from './Header';
 import ContestsPreview from './ContestsPreview';
-import axios from 'axios';
 
 class App extends React.Component {
 
@@ -9,12 +8,11 @@ class App extends React.Component {
         super(props);
         this.state = {
             headerContent: 'Naming Contests',
-            contests: []
+            contests: this.props.initialContests
         }
     }
 
     render() {
-
         return (
             <div>
                 <div>
@@ -25,7 +23,6 @@ class App extends React.Component {
                 </div>
             </div>
         );
-
     }
 
     componentDidMount() {
@@ -33,13 +30,6 @@ class App extends React.Component {
         console.log('component mounted');
         // ajax, external libraries (component is dependent on), dom manipulations
         // should come here
-
-        axios.get('/api/contests')
-            .then(resp =>
-                this.setState({ contests: resp.data.contests })
-            )
-            .catch(console.error)
-
     }
 
     componentWillUnmount() {

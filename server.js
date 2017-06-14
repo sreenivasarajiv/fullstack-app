@@ -3,13 +3,14 @@ import config from './config';
 import apiRouter from './api/server';
 import sassMiddleware from 'node-sass-middleware';
 import path from 'path';
+import serverRender from './serverRender';
 
 const server = express();
 
 server.set('view engine', 'ejs');
 
-server.listen(config.port, () => {
-    console.log(`listening to http://localhost:${config.port}`);
+server.listen(config.port, config.host, () => {
+    console.log(`listening to http://${config.host}:${config.port}`);
 });
 
 server.use(express.static('public'));
@@ -22,9 +23,11 @@ server.use(sassMiddleware({
 }));
 
 server.get('/', (req, res) => {
-    // res.send("Hello from Express !!!");
-    // ejs index page
-    res.render('index', {
-        content: 'Hello, EJS by <strong>Sreenivasa Rajiv</strong>'
-    });
+    serverRender()
+        .then(content => {
+            res.render('index', {
+                content : content
+            });
+        })
+        .catch(console.error);
 });
